@@ -1,0 +1,1368 @@
+main {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Romero', sans-serif;
+    position: relative;
+
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: end;
+    height: 100vh;
+
+    box-sizing: border-box;
+}
+
+.connexion {
+    flex-direction: column;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    gap: 20px;
+    width: 400px;
+    border: 1px solid black;
+    border-radius: 10px;
+    background-color: #339933;
+    color: white;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    color: white;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    gap: 10px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* -----------------------------------------------------NAV-----------------------------------------------------*/
+nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 10%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    gap: 50px;
+
+    background-color: #03160e !important;
+    z-index: 200;
+}
+
+.option {
+    display: flex;
+    justify-content: space-around;
+
+    align-items: center;
+    width: 100%;
+
+    box-sizing: border-box;
+}
+
+.option>* {
+
+    text-align: center;
+
+}
+
+.option>a {
+    font-weight: 500;
+    text-decoration: none;
+    color: white;
+    padding: 15px;
+    transition: 0.5s;
+    border-radius: 0px;
+    text-align: center;
+    justify-self: center;
+    align-self: center;
+    cursor: pointer;
+    width: 250px;
+    /* box-sizing: border-box;
+    padding-top: 10px; */
+
+}
+
+.option>a {
+    font-size: 30px;
+}
+
+.option>h2 {
+    font-size: 40px;
+}
+
+.option>a:hover,
+.option>h2>a:hover {
+    background-color: white;
+    color: #03160e;
+
+}
+
+.option>a:hover>span {
+    
+    color: #03160e;
+}
+
+.nbPanier {
+    position: absolute;
+    right: 10px;
+    top: 4px;
+    height: 20px;
+    width: 15px;
+    font-weight: 100 !important;
+    font-size: 20px;
+    color: white;
+    /* background-color: rgb(255, 255, 255); */
+    
+    transition: 0.5s;
+    padding-top: 1px;
+    box-sizing: border-box;
+
+}
+
+.navPanier {
+    position: relative;
+}
+
+/* -----------------------------------------------------NAV-----------------------------------------------------*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+.orderContainer {
+    display: flex;
+    justify-content: center;
+    align-items: start;
+    flex-direction: column;
+
+}
+
+.formOrder {
+    align-items: start !important;
+}
+
+.hugeOrderContainer {
+    width: 100%;
+    height: calc(100vh - 130px);
+    position: absolute;
+    top: 130px;
+
+    padding-bottom: 5%;
+    box-sizing: border-box;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 50px;
+
+}
+
+.commandeContainer {
+    width: 400px;
+    height: 300px;
+    border: 2px solid black;
+    /* box-sizing: border-box; */
+    padding: 10px;
+
+}
+
+.title {
+    position: relative;
+    text-align: center;
+    scale: 1.5;
+
+    color: white;
+    height: 80px;
+    width: 350px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 40px;
+    border-bottom-left-radius: 0;
+
+}
+
+.choixTypePlatContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.choixPlat {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+    height: 100%;
+    flex-direction: column;
+}
+
+
+
+
+
+
+
+
+
+/* -----------------------------------------------------LISTE PLATS ------------------------------------------------------------------------*/
+.infoAdd{
+    position: absolute;
+    top: 10%;
+    left: calc(50% - 200px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 5px;
+    width: 400px;
+    height: 90%;
+    pointer-events: none;
+    
+}
+.infoAdd h3{
+    margin: 0;
+    background-color: white;
+    color: #03160e;
+    padding: 5px 20px;
+    transition: 0.3s;
+    animation: destroyer 3s forwards;
+    
+}
+@keyframes destroyer {
+    80%{
+        opacity: 1;
+    }
+    100%{
+        opacity: 0;
+        display: none;
+    }
+}
+.backgroundTransi{
+    position: absolute;
+    width: 110%;
+    transition: 1.5s;
+    left: -5%;
+    top: -145%;
+    transform-origin: left top!important;
+    z-index: 900000;
+}
+.gigaContainer {
+    height: 90%;
+    background-color: #194327;
+    width: 100%;
+    overflow: hidden;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    background-size: 100vw;
+}
+input[type="submit"]{
+    font-family: "Poppins", sans-serif;
+    font-weight: 500;
+    border-radius: 0;
+    border-style: none;
+    cursor: pointer; 
+}
+select{
+    border-style: none;
+    border-radius: 0;
+    border-color: none;
+    background-color: transparent;
+    cursor: pointer;
+    font-family: "Poppins", sans-serif;
+    border-image: none;
+    color:#03160e;
+    font-weight: 500;
+    background-color: white;
+    
+}
+
+.platContainer {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    flex-wrap: wrap;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+    box-sizing: border-box;
+    padding: 5px;
+    animation: coming 1s forwards ease-out ;
+    bottom: 230%;
+    transition: transform 0.5s linear;
+    
+}
+.platContainer.backward{
+    animation: back 1s forwards ease-out;
+
+}
+
+.cardPlatmargin:hover>div>h3{
+    color: #03160e;
+    transition: 0.3s;
+    user-select: none;
+}
+.cardPlatmargin:hover>div>div>div>p{
+    color: #03160e;
+    transition: 0.3s;
+    
+}
+.cardPlatmargin:hover>div>div>div>select{
+    font-weight: 500;
+    color: white;
+    transition: 0.3s;
+    background-color: #03160e;
+}
+.addToCart{
+    font-family: "Poppins", sans-serif;
+    font-weight: 500;
+    border-radius: 0;
+    border-style: none;
+    cursor: pointer; 
+    transition: 0.3s;
+}
+.cardPlatmargin:hover>div>div>button{
+    background-color: #03160e;
+    color: white;
+}
+.optionContainer{
+    width: 90%;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+    padding: 5% 0 2% 0;
+}
+.optLib{
+    font-size: small;
+    padding-top: 4px;
+    color:rgb(203, 203, 203);
+}
+@keyframes coming {
+    99% {
+        overflow: visible;
+    }
+
+    100% {
+        bottom: 0;
+        overflow: auto;
+    }
+}
+
+.gigaContainer.containEntree {
+    background-image: url(images/entree1.jpeg);
+    background-size: cover!important;
+}
+
+.gigaContainer.containViande {
+    background-image: url(images/viande2.jpg);
+    background-size: cover!important;
+}
+
+.gigaContainer.containPlat {
+    background-image: url(images/plat.jpeg);
+    background-size: cover!important;
+}
+
+.gigaContainer.containPoisson {
+    background-image: url(images/423566\ \(1\).jpg);
+    background-repeat:no-repeat;
+    background-size: cover!important;
+}
+
+.gigaContainer.containAccompagnement {
+    background-image: url(images/other.png);
+    background-size: cover;
+}
+
+.cardPlatmargin {
+    /* width: 30%;
+    height: 320px; */
+    transition: 0.3s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+}
+
+.cardPlatmargin:hover {
+    padding: 0;
+}
+
+.cardPlatmargin.platEntree {
+    width: 420px;
+    height: 290px;
+}
+
+.cardPlatmargin.platPoisson {
+    width: 500px;
+    height: 350px;
+}
+.cardPlatmargin.platViande {
+    width: 420px;
+    height: 330px;
+}
+.cardPlatmargin.platPlat {
+    width: 430px;
+    height: 330px;
+}
+
+.cardPlat {
+    /* border: 2px solid black; */
+    box-sizing: border-box;
+    width: calc(100% - 15px);
+    height: calc(100% - 15px);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    overflow: auto;
+    flex-direction: column;
+    text-align: center;
+    padding: 10px;
+    background-color: #06281a;
+    border-color: #03160e;
+    color: white;
+    transition: 0.3s;
+
+}
+
+.cardPlat>h3 {
+    font-weight: 100;
+}
+
+.cardPlat:hover {
+    width: 100%;
+    height: 100%;
+    background-color: white;
+   
+    border: 2px solid  #03160e;
+}
+
+/* -----------------------------------------------------LISTE PLATS ------------------------------------------------------------------------*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*---------------------------------------------------------------------MENU PLAT------------------------------------------------------------*/
+.backgroundMenu{
+    position: absolute;
+    width: 110%;
+    left: -5%;
+    top: -5%;
+    transform-origin: left top!important;
+    
+}
+.biggerContainer {
+    background-image: url(images/meal2.webp);
+    background-position-x: 0;
+    background-position-y: 0;
+    background-size: 110%;
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+    height: 90%;
+}
+
+.choixTypePlatContainer {
+    width: 0%;
+    height: 100%;
+    animation: growing 1.3s forwards;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+    
+}
+.choixTypePlatContainer.reduce{
+    width: 100%;
+    animation: reduce 1s forwards;
+}
+@keyframes reduce {
+    
+    100%{
+        width: 0px;
+    }
+}
+@keyframes growing {
+    100% {
+        width: 100%;
+    }
+}
+
+.choixTypePlatContainer>a {
+    height: 100%;
+    width: 100%;
+    background-position-x: left;
+    background-position-y: top;
+    background-size: cover;
+    position: relative;
+    overflow: hidden;
+    transition: 0.4s;
+    cursor: pointer;
+}
+
+.choixTypePlatContainer>a:hover {
+    width: 140%;
+}
+
+.platSec {
+    height: 100%;
+    width: 100%;
+}
+
+.platSec>div {
+
+    opacity: 0.9;
+    height: 100%;
+    width: 100%;
+    transition: 1s;
+    display: flex;
+}
+
+.platSec>div:hover {
+    opacity: 0!important;
+}
+
+.aEntree {
+    background-image: url(images/entree1.jpeg);
+    
+    background-size: 100vw !important;
+    
+}
+
+.aPlat {
+    background-image: url(images/plat.jpeg);
+    background-size: 100vw !important;
+   
+}
+
+.aViande {
+    background-image: url(images/viande2.jpg);
+    background-size: 100vw !important;
+    
+
+}
+
+.aPoisson {
+    background-image: url(images/423566\ \(1\).jpg);
+    background-size: 100vw !important;
+
+}
+
+.aOther {
+    background-image: url(images/other.png);
+    background-size: 100vw !important;
+
+}
+
+.platSec.entree>div {
+    background-color: #06281a;
+    opacity: 0.97;
+}
+
+.platSec.plat>div {
+    background-color: #496e3f;
+}
+
+.platSec.viande>div {
+    background-color: #194327;
+}
+
+.platSec.poisson>div {
+    background-color: #799c52;
+}
+
+.platSec.other>div {
+    background-color: #bdd565;
+}
+
+.st.anim {
+    top: -100% !important;
+}
+
+
+
+platSec>div:hover {
+    opacity: 0!important;
+}
+
+.platSec h1 {
+    position: absolute;
+    transition: 0.6s;
+    scale: 4;
+    color: rgb(255, 255, 255);
+    padding: 0;
+    margin: 0;
+}
+
+.st1 {
+    transform: rotate(270deg);
+    right: -7px;
+    top: 140%;
+}
+
+.entree:hover>.st1 {
+    top: 67%;
+    right: -7px;
+}
+
+.st2 {
+    transform: rotate(90deg);
+    left: -7px;
+    top: -50%;
+
+}
+
+.viande:hover>.st2 {
+    top: 38%;
+}
+
+.st3 {
+    /* transform: rotate(270deg); */
+    padding-right: 26px !important;
+    left: 50%;
+    top: -30%;
+}
+
+.plat:hover>.st3 {
+    top: 19%;
+}
+
+.st4 {
+    transform: rotate(270deg);
+    right: -7px;
+    top: -50%;
+
+}
+
+.poisson:hover>.st4 {
+    top: 43%;
+}
+
+.st5 {
+    transform: rotate(90deg);
+    left: -7px;
+    bottom: -50%;
+}
+
+.other:hover>.st5 {
+    bottom: 25%;
+}
+
+.aSect.disapear {
+    width: 0 !important;
+    transition: 1s;
+
+}
+
+.aSect.transi>section>div {
+    background-color: transparent !important;
+}
+
+/*---------------------------------------------------------------------MENU PLAT -----------------------------------------------------------*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*--------------------------------------------------------------------- ACCUEIL ------------------------------------------------------------*/
+
+.backgroundAccueil {
+    position: absolute;
+    z-index: -10;
+    width: 110%;
+   
+    top: -5%;
+    left: -5%;
+    
+    /* height: 110%; */
+}
+/* .backgroundAccueil.anim{
+animation: placement 1s forwards;
+} */
+/* @keyframes placement{
+    100%{
+        top: 0;
+        left: 0;
+    }
+} */
+.colorContainer {
+    height: 90%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column-reverse;
+    position: relative;
+    overflow: hidden;
+}
+
+.color {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    position: relative;
+    transition: 0.4s;
+
+}
+
+.color:hover {
+    height: 110%;
+}
+
+
+.d3 {
+    box-sizing: border-box;
+    width: 100%;
+    height: 200%;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position:relative;
+    opacity: 1;
+}
+.d3.disapear{
+    height: 0%;
+}
+.masker1{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 50%;
+    height: 100%;
+    animation: byebye1 2s forwards;
+    background-color: #06281a;
+}
+.masker2{
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 50%;
+    height: 100%;
+    animation: byebye2 2s forwards ; 
+    background-color: #06281a;
+}
+@keyframes byebye1 {
+    35%{
+        left:0;
+    }
+    100%{
+        left: -50%;
+    }
+}
+@keyframes byebye2 {
+    35%{
+        right:0;
+    }
+    100%{
+        right: -50%;
+    }
+}
+
+
+.midColor {
+    width: 100%;
+    height: 100%;
+
+}
+
+.midImg {
+    position: absolute;
+    width: 150%;
+
+    z-index: -1;
+
+}
+
+.welcomeBoviet {
+    background-color: #06281a;
+    padding: 30px;
+    z-index: 200;
+    color: white;
+
+}
+
+
+.d5>span {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: #496e3f;
+    opacity: 0.7;
+}
+
+.d5>h1 {
+    color: white;
+    z-index: 200;
+}
+
+.d3:hover {
+    height: 240%;
+}
+
+
+
+
+
+
+/*------------------------------------------------------------------- Accueil --------------------------------------------------------------*/
+
+
+
+/*------------------------------------------------------------------- */
+
+
+
+
+
+
+
+
+/*-----------------------------------------------------------------Panier---------------------------------------------------------------*/
+
+
+.panierContainer{
+    height: 90%;
+    width: 100%;
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    flex-direction: column;
+    position: relative;
+    overflow: hidden;
+}
+.panBackground{
+    position: absolute;
+    z-index: 1;
+    width: 110%;
+    top: -5%;
+    left: -5%;
+    
+}
+.bgCoverPanier{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background-color: #496e3f;
+    opacity: 0.7;
+    z-index: 2;
+    transition: 0.5s;
+}
+.bgCoverPanier.readyToGo{
+    transition: 2s;
+    opacity: 0;
+}
+.cartContainer{
+    width: 0%;
+    height: 0%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+    gap: 30px;
+    padding: 50px 5%;
+    background: #06281a;
+    z-index: 3;
+    box-sizing: border-box;
+    animation: 1s appear forwards;
+    position: relative;
+}
+@keyframes appear{
+    30%{
+        width: 0;
+        height: 100%;
+    }
+    100%{
+        height: 100%;
+        width: 60%;
+    }
+}
+.cartTitle{
+    width: 100%;
+    height: 150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+.cartTitre{
+    opacity: 0;
+    color: white;
+    animation: titleAppear 2s forwards;
+    transition: 1s;
+}
+@keyframes titleAppear{
+    0%{
+        opacity: 0;
+    }
+    
+    50%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
+}
+
+.cartContent{
+    width: 600px;
+    height: 100%;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    flex-direction: column;
+    gap: 20px;
+    overflow: auto;
+    /* border: 4px solid white; */
+    padding: 25px 20px;
+    box-sizing: border-box;
+    position: relative;
+    position: relative;
+}
+.bottomCover{
+    width: 100%;
+    height: 0%;
+    position: absolute;
+    bottom: 0;
+    
+    background:linear-gradient(180deg, rgba(252,252,251,0) 0%, #06281a 100%);
+    z-index: 999;
+    animation: appearBottom 2s forwards;
+}
+@keyframes appearBottom {
+    30%{
+        height: 0;
+    }
+    100%{
+        height: 100px;
+    }
+}
+.cartContent::-webkit-scrollbar-thumb {
+    display: block;
+ 
+}
+.cartContent::-webkit-scrollbar{
+    display: none;
+}
+.contentLine{
+    width: 500px;
+    opacity: 0;
+    background-color: white;
+    padding: 0 20px;
+    color: #03160e;
+    display: flex;
+    box-sizing: border-box;
+    justify-content: space-between;
+    align-items: center;
+    animation: lineAppear 2s forwards;
+
+}
+.oups{
+    opacity: 0;
+    animation: lineAppear 2s forwards;
+}
+@keyframes lineAppear {
+    50%{
+        opacity:0;
+
+    }
+    100%{
+        opacity: 1;
+    }
+}
+/* .contentLine.here{
+    opacity: 1;
+    transition: 1s;
+} */
+.contentLine *{
+    opacity: 0;
+    transition: .5s;
+}
+/* .contentLine.here{
+    opacity: 1;
+} */
+.contentLine h4.here{
+    opacity: 1;
+}
+.contentLine h4.deleted{
+     transition: 0.5s!important;
+    transform:scale(1,0);
+}
+
+.contentLine.deleted{
+    transition: 0.5s!important;
+    transform:scale(1,0);
+    
+    
+}
+
+.removeBtn{
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+    border:none;
+    border-radius: 0;
+    background-color: #03160e;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    padding-bottom: 9px;
+    box-sizing: border-box;
+
+
+}
+.removeBtn.here{
+    opacity: 1;
+}
+.removeBtn.here span{
+    opacity: 1;
+}
+
+.iconRemove{
+    font-size: 50px;
+    color: white;
+}
+.switchDiv{
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 0%;
+    top: 0;
+    left: 0;
+    z-index: 99999999;
+    background-color: #03160e;
+    transition: 0.5s;
+
+}
+.switchDiv.transi{
+
+   
+    height: 100%;
+
+}
+.welcomeMaster{
+    color: white;
+    width: 0;
+    overflow: hidden;
+    text-align: center;
+    transition: 0.5s steps(34);
+    white-space: nowrap;
+}
+.welcomeMaster.transi{
+    transition: 1.5s steps(34)!important;
+    width: 730px!important;
+
+}
+
+.globalCartContainer{
+    justify-content: center;
+    align-items: center;
+    display: none;
+    flex-wrap: wrap;
+    gap: 40px;
+    height: 100%;
+    width: 100%;
+    overflow-y: auto;
+    box-sizing: border-box;
+    position: relative;
+    padding-bottom: 5%;
+}
+.globalCartContainer.visible{
+    display: flex;
+}
+.uCartContainer{
+    display: flex;
+    background-color: #03160e;
+    font-family: "Poppins", sans-serif;
+    color: white;
+    justify-content: start;
+    align-items: center;
+    flex-direction: column;
+    border: 2px solid white;
+    overflow-y: auto;
+    width: 300px;
+    height: 300px;
+    box-sizing: border-box;
+    padding: 10px;
+}
+
+
+.codeCopy{
+    display: none;
+    margin-top: 30px;padding-top: 4px;
+    width: 240px;
+    height: 40px;
+    border: none;
+    border-radius: 0;
+    font-size: 20px;
+    font-family: 'Romero', sans-serif;
+    cursor: pointer;
+}
+.codeCopy.visible{
+    display: block;
+
+}
+
+.adminContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 50px;
+}
+
+.cartContainer.readyToGo *{
+    transition: 0.3s;
+    opacity: 0;
+}
+.cartContainer.readyToGo{
+    animation: toGo 1s forwards;
+    height: 100%;
+    width: 60%;
+}
+@keyframes toGo {
+    30%{
+        width: 60%;
+        
+    }
+
+    100%{
+        padding: 0;
+        width: 0;
+       
+    }
+}
+.cartValid{
+    margin-top: 30px;padding-top: 4px;
+    width: 240px;
+    height: 40px;
+    border: none;
+    border-radius: 0;
+    font-size: 20px;
+    font-family: 'Romero', sans-serif;
+    cursor: pointer;
+    animation: titleAppear 2s forwards;
+}
+
+.gotoAdmin{
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    z-index: 99999;
+    font-size: 15px;
+    color: white;
+    font-weight: 100;
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+
+
+::-webkit-scrollbar {
+    display: none;
+}
+
+
+
+
+
+
+.choixPlat>div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 70px;
+}
+
+.choixPlat>div>a {
+    background-color: #339933;
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    width: 150px;
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+    transition: 0.5s;
+    text-decoration: none;
+}
+
+.choixPlat>div>a:hover {
+    background-color: white;
+    color: #339933;
+}
+
+
+
+
+
+
+
+
+.bigAdminContainer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    padding-top: 140px;
+    box-sizing: border-box;
+}
+
+
+
+.contentAdmin {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 300px;
+    height: 300px;
+    border: 2px solid;
+    padding: 10px;
+    box-sizing: border-box;
+    overflow: auto;
+}
+
+
+
+.welcome {
+    height: 90%;
+}
+
+.contentContainer {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    display: wrap;
+    gap: 30px;
+    overflow: auto;
+}
+.backButton{
+    position: absolute;
+    bottom: 30px;
+    right: 30px;
+    width: 50px;
+    height: 50px;
+    color: white;
+    background-color: #03160e;
+    border-radius: 0;
+    border: none;
+    transition: 0.5s;
+    z-index: 999999;
+    font-size: 40px;
+}
+.backButton:hover{
+    color: #03160e;
+    background-color: white;
+}
+
+.backButton.plat{
+    color: #03160e;
+    background-color: white;
+}
+.backButton.plat:hover{
+    color: white;
+    background-color: #03160e;
+}
